@@ -1,0 +1,86 @@
+a:link {
+  text-decoration: none; }
+
+.fa-github {
+  font-size: 36px; }
+
+div.tooltip {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  background-color: white;
+  font-size: 12px;
+  position: absolute;
+  padding: 2px 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  pointer-events: none; }
+
+#resume {
+  background-color: #f1f1f1;
+  margin-top: 128px; }
+
+md-list.toc md-list-item .md-list-item-text a.active {
+  color: white;
+  background-color: #f44336;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  #resume {
+    background-color: #f1f1f1;
+    margin-top: 128px; }
+    #resume md-content md-card {
+      margin: 10px auto; } }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  #resume {
+    background-color: #f1f1f1;
+    margin-top: 128px; }
+    #resume md-card.scrollspy {
+      position: fixed;
+      z-index: 8;
+      width: 22%;
+      background-color: #fff; }
+    #resume #res-col {
+      padding-right: 4px;
+      background-color: #f1f1f1; }
+    #resume md-content {
+      background-color: #f1f1f1; }
+      #resume md-content md-card {
+        background-color: #fff; }
+    #resume div.contact-info {
+      /* visited link */
+      /* mouse over link */
+      /* selected link */ }
+      #resume div.contact-info a:link {
+        color: #000; }
+      #resume div.contact-info a:visited {
+        color: #000; }
+      #resume div.contact-info a:hover {
+        color: #000; }
+      #resume div.contact-info a:active {
+        color: #000; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  #resume {
+    background-color: #fff;
+    margin-top: 128px; }
+    #resume md-content md-card {
+      margin: 10px auto;
+      width: 100%; } }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .md-avatar.pie {
+    width: 96px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 52px;
+    left: 0; }
+
+  md-card.splash-card {
+    position: fixed;
+    text-align: center;
+    top: 3em;
+    left: 33%;
+    margin: 0 auto;
+    width: 33%;
+    background-color: #fff;
+    z-index: 10; } }
+
+/*# sourceMappingURL=resume.css.map */

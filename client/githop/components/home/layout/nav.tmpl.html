@@ -1,0 +1,38 @@
+<span flex></span>
+  <div class="md-toolbar-tools md-toolbar-tools-bottom btn-small">
+    <h4><span ui-sref="home.main">githop</span></h4>
+  </div>
+  <div layout="row" >
+    <md-button ui-sref="home.resume">resume</md-button>
+    <md-button ui-sref="home.blog">blog</md-button>
+    <span flex></span>
+    <md-button ng-show="!Home.currentUser" ng-click="Home.login()">Login</md-button>
+    <md-button ng-show="Home.currentUser" ng-click="Home.logOut()">Logout</md-button>
+  </div>
+
+<script type="text/ng-template" id="dialog1.tmpl.html">
+  <md-dialog>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h4>Login</h4>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <p>Login to create / edit Posts (and perhaps more someday!)</p>
+      <div class="login">
+        <div class="md-actions" layout="column">
+          <md-input-container>
+            <label>Email</label>
+            <input type="email" ng-model="email">
+          </md-input-container>
+          <md-input-container>
+            <label>password</label>
+            <input type="password" ng-model="password">
+          </md-input-container>
+          <md-button ng-click="dialog.login(email, password)">login</md-button>
+        </div>
+      </div>
+    </md-dialog-content>
+  </md-dialog>
+</script>
+

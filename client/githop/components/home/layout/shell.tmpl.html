@@ -1,0 +1,30 @@
+<div layout="column">
+  <md-toolbar id="my-nav" class="md-tall" ui-view="nav" scroll-nav></md-toolbar>
+  <md-content ui-view="body" layout="column">
+  </md-content>
+</div>
+
+<script type="text/ng-template" id="updatesDialog.tmpl.html">
+  <md-dialog>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h4>Updates</h4>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <p>Latest Commit Message: <a ng-href="{{u.data.url}}" target="_blank">link</a></p>
+      <pre>{{u.data.message}}</pre>
+      <p>By: {{u.data.author}} on {{u.data.date | date:'medium'}}</p>
+      <div class="md-actions">
+        <md-button ng-click="u.install()">install</md-button>
+      </div>
+    </md-dialog-content>
+  </md-dialog>
+</script>
+
+<script type="text/ng-template" id="updateToast.tmpl.html">
+  <md-toast>
+    <span flex>Updates Available <a href="#" ng-click="c.changeLog()">changelog</a></span>
+    <md-button ng-click="c.install()">Install</md-button>
+  </md-toast>
+</script>

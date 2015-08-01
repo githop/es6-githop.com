@@ -1,0 +1,250 @@
+<div id="resume" layout="row" layout-sm="column">
+
+  <div flex>
+    <md-card class="scrollspy">
+      <md-toolbar>
+        <div class="md-toolbar-tools md-toolbar-tools-bottom">
+          <h4>Table of Contents</h4>
+        </div>
+      </md-toolbar>
+      <md-card-content>
+        <md-list class="toc">
+          <md-list-item ng-repeat="c in Res.toc" du-scrollspy du-smooth-scroll>
+            <i class="material-icons">{{c.icon}}</i>
+            <div class="md-list-item-text">
+              <md-button href="{{c.id}}" du-scrollspy du-smooth-scroll >{{c.text}}</md-button>
+            </div>
+          </md-list-item>
+        </md-list>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div id="res-col" flex="75" flex-sm="100">
+    <div layout-padding>
+      <!--intro-->
+      <md-card id="intro">
+
+        <md-toolbar class="md-warn">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom">
+            <img ng-src="./assets/images/profpic.jpg" class="md-avatar res"/>
+            <h3>G. Tom Hopkins</h3>
+          </div>
+        </md-toolbar>
+
+        <md-card-content>
+
+          <div layout="row" layout-align="space-between">
+            <div layout="row" layout-sm="column" layout-align="center center" ng-repeat="c in Res.contactInfo" class="contact-info">
+              <a ng-href="{{c.link}}" alt={{c.text}} target="_blank"><i ng-class="{'fa fa-github': c.immaterial, 'material-icons md-36': !c.immaterial }">{{c.icon}}</i></a>
+              <md-button hide-sm ng-href="{{c.link}}" alt={{c.text}} target="_blank">{{c.text}}</md-button>
+            </div>
+          </div>
+
+          <div layout="row" layout-sm="column">
+            <div flex>
+
+              <div class="pie-wrapper">
+                <tooltip ng-model="Res.selectedModel"></tooltip>
+                <img ng-src="../assets/images/profpic.jpg" class="md-avatar pie"/>
+                <donut ng-model="Res.skillsChart" width="200" height="200" radius="50" property="'value'"
+                       mousemove="Res.openToolTip(model)" mouseleave="Res.closeToolTip()"></donut>
+
+
+
+              </div>
+            </div>
+            <div flex>
+              <p>Technology professional seeking web development positions. Highly motivated, self-directed,
+                autodidactic
+                and passionate. An adept communicator who interfaces well with a diverse set of personality types.
+                Possesses
+                a unique blend of interpersonal and analytical skills and will apply them to the benefit of your
+                organization.</p>
+            </div>
+          </div>
+        </md-card-content>
+      </md-card>
+
+      <!--professional experience-->
+      <md-card id="exp">
+        <md-toolbar class="md-warn">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom">
+            <i class="material-icons md-36">work</i>
+
+            <h3>Professional Experience</h3>
+
+          </div>
+        </md-toolbar>
+        <md-card-content>
+
+          <section>
+            <div layout="row" layout-align="space-between center">
+              <h4>Trainheroic</h4>
+              <div>December 2014 - June 2015</div>
+            </div>
+            <p>TrainHeroic is a startup specializing in fitness and coach/gym driven workout programs located in Boulder, CO. Product portfolio consists of three web apps, (coach/athlete portal and marketplace) and an iPhone app. Server stack consists of of a monolith PHP app being replaced by a Laravel API. Coach portal and marketplace client apps are AngularJS, athlete portal is currently being rewritten in Angular.</p>
+
+            <md-list>
+              <md-list-item class="md-1-line" ng-repeat="win in Res.wins">
+                <i class="material-icons">done</i></br>
+                <div class="md-list-item-text" flex>{{win.text}}</div>
+              </md-list-item>
+            </md-list>
+          </section>
+
+          <md-divider></md-divider>
+
+          <section>
+            <div layout="row" layout-align="space-between center">
+              <h4>Independent Ruby Contractor</h4>
+              <div>August 2014 - December 2015</div>
+            </div>
+            <p>Worked on contract basis developing custom software for small businesses in the Boulder area</p>
+          </section>
+
+
+        </md-card-content>
+      </md-card>
+
+      <!--projects -->
+      <md-card id="projects">
+        <md-toolbar class="md-warn">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom">
+            <i class="material-icons md-36">code</i>
+
+            <h3>Projects</h3>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <section>
+            <div layout="row" layout-align="space-between center">
+              <h4><a ng-href="http://devbootcamp.com">Dev Bootcamp</a></h4>
+              <div>April - July 2014</div>
+            </div>
+
+            <p>Dev Bootcamp is an intensive 9 week program designed to instill a foundation for a career in web
+              development.
+              DBC emphasises non-technical skills such as team integration and engineering empathy.</p>
+
+            <md-divider></md-divider>
+
+            <h4><a ng-href="https://floating-springs-6532.herokuapp.com/#/">PaddedPockets</a></h4>
+
+            <p>Begun as personal project after 6 weeks of Dev Bootcamp. Originally a <a
+                ng-href="https://hidden-shore-1353.herokuapp.com/">Sinatra app</a>, it has since gone through
+              several iterations; <a ng-href="">a Rails app</a>, then 2 AngularJS / Rails hybrid apps. <a
+                  ng-href="https://pocketspadded.herokuapp.com/#/">Angular v1</a>, <a
+                  ng-href="https://floating-springs-6532.herokuapp.com/#/">v2</a></p>
+
+            <p>In all versions the app pulls data from a 3rd party API, caches it, then returns the data to the user.
+              The
+              Angular/Rails versions use Rails to gather and serialize the data as JSON, which is consumed by the
+              Angular
+              client. All politician images are hosted on Google drive and fetched via API call from the Angular
+              client.</p>
+
+            <h4><a ng-href="https://github.com/dyoachim/soundscript">SoundScript</a></h4>
+
+            <p>Final group project at DBC. SoundScript is a tool for learning new languages via YouTube. Users can watch
+              crowd sourced translations or upload translations of their own. Tools used were primarily JavaScript, the
+              YouTube API, and a Rails server tying everything together.</p>
+
+          </section>
+        </md-card-content>
+      </md-card>
+
+      <!--community / talks-->
+      <md-card id="talks">
+        <md-toolbar class="md-warn">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom">
+            <i class="material-icons md-36">group</i>
+
+            <h3>Community / Talks</h3>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <div layout="row" layout-align="space-between center">
+            <h4>Boulder Ruby Group - Ruby Newby Beginner’s Track</h4>
+            <div>September 2014</div>
+          </div>
+          <p>Authored presentation at meetup group on basic ruby data structures; i.e. strings and numbers. The series
+            is tailored towards beginners. <a ng-href="http://rubybeginnerstrack.github.io/2014/10/15/basic-data-types.html">Blog Post</a> - <a ng-href="http://githop.github.io/slides_ruby_newby/">Slides</a></p>
+
+
+          <md-divider></md-divider>
+
+          <div layout="row" layout-align="space-between center">
+            <h4><a ng-href="http://www.meetup.com/RockyMountainAngularJS/photos/25863001/433553204/" target="_blank">Boulder AngularJS Meetup</a></h4>
+            <div>January 2015</div>
+          </div>
+          <p>Delivered talk on experiences using AngularJS with a Rails API. Presentation focused on PaddedPockets Rails and Angular architecture,  3rd party services,  development and design decisions along the way, followed by a Q&A session regarding the app. </p>
+
+        </md-card-content>
+      </md-card>
+
+      <!--startup competition-->
+      <md-card id="competition">
+        <md-toolbar class="md-warn">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom">
+            <i class="material-icons md-36">equalizer</i>
+
+            <h3>Startup Competitions</h3>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <div layout="row" layout-align="space-between center">
+            <h4>3rd Pace - 2014 Marijuana Tech Startup competition</h4>
+            <div>2014</div>
+          </div>
+          <a ng-href="http://www.cannabrokersnetwork.com/">cannabrokersnetwork.com</a> - code on github
+          <p>2 day hackathon style startup competition. Cannabrokers is a B2B online market for the cannabis industry.
+            Built app on freelance basis and is still under development. Featured in BBC, Yahoo Finance</p>
+        </md-card-content>
+      </md-card>
+
+      <!--other -->
+      <md-card id="other">
+        <md-toolbar class="md-warn">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom">
+            <i class="material-icons md-36">build</i>
+
+            <h3>Other</h3>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <div layout="row" layout-align="space-between center">
+            <h4>Partner Professional Solutions</h4>
+            <div>2009 - 2014</div>
+          </div>
+          <p>Partner Professional Solutions is predominantly a Healthcare IT recruiting company based in Cincinnati, OH.
+            Roles over tenure included: intern, sales-researcher, IT support, Head of IT. Responsibilities included
+            vendor
+            relations, policy formation/implementation, admin / technical roles.</p>
+        </md-card-content>
+      </md-card>
+
+      <!--education-->
+      <md-card id="edu">
+        <md-toolbar class="md-warn">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom">
+            <i class="material-icons md-36">school</i>
+
+            <h3>Education</h3>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <div layout="row" layout-align="space-between center">
+            <h4>Ohio University</h4>
+            <div>2012</div>
+          </div>
+          Bachelor of Arts Philosophy
+        </md-card-content>
+      </md-card>
+
+
+    </div>
+  </div>
+
+
+</div>

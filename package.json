@@ -1,0 +1,61 @@
+{
+  "name": "githop-jspm",
+  "version": "1.0.0",
+  "description": "first try with JSPM and angular, es6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githop/githop.com.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "JSPM",
+    "ES2015"
+  ],
+  "author": "Tom Hopkins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/githop/githop.com/issues"
+  },
+  "homepage": "https://github.com/githop/githop.com#readme",
+  "devDependencies": {
+    "browser-sync": "^2.8.1",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-html-replace": "^1.5.1",
+    "gulp-manifest": "0.0.7",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "jspm": "^0.15.7"
+  },
+  "jspm": {
+    "directories": {},
+    "configFile": "jspm.config.js",
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.3",
+      "angular-animate": "github:angular/bower-angular-animate@^1.4.3",
+      "angular-material": "github:angular/bower-material@^0.10.0",
+      "angular-sanitize": "github:angular/bower-angular-sanitize@^1.4.3",
+      "angular-scroll": "github:oblador/angular-scroll@^0.7.1",
+      "angular-touch": "github:angular/bower-angular-touch@^1.4.3",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "clean-css": "npm:clean-css@^3.3.7",
+      "css": "github:systemjs/plugin-css@^0.1.13",
+      "d3": "github:mbostock/d3@^3.5.6",
+      "jquery": "github:components/jquery@^2.1.4",
+      "material-design-icons": "npm:material-design-icons@^2.0.0",
+      "ng-donut": "github:wildhoney/ngdonut@^0.1.5",
+      "orbitbot/ng-appcache": "github:orbitbot/ng-appcache@^2.0.0",
+      "text": "github:systemjs/plugin-text@^0.0.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}
