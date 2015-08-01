@@ -3,8 +3,8 @@
  * Created by githop on 7/31/15.
  */
 
-/*@ngInject*/
 let UserFactory = function($http, $q, $window, $mdDialog, $mdToast, AuthToken, API_URL) {
+  'ngInject';
   var User = {};
 
   var _user = undefined;

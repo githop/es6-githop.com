@@ -7,23 +7,23 @@ import 'angular-ui-router';
 import 'angular-material';
 import 'angular-material/angular-material.css!';
 import Components from './components/components';
-//import Directives from './directives/directives';
+import Directives from './directives/directives';
 import GithopComponent from './githop.comp';
 
 let appModule = angular.module('githop', [
   'ui.router',
   'ngMaterial',
-  Components.name
-  //Directives.name
+  Components.name,
+  Directives.name
 ])
   .value('duScrollOffset', 70)
-  .constant('API_URL', 'http://githop.com')
+  .constant('API_URL', 'http://localhost:3000')
 
   .config(($urlRouterProvider, $httpProvider, $compileProvider, API_URL) => {
     $httpProvider.interceptors.push('AuthInterceptor');
-    //if (API_URL === 'http://githop.com') {
-    //  $compileProvider.debugInfoEnabled(false);
-    //}
+    if (API_URL === 'http://githop.com') {
+      $compileProvider.debugInfoEnabled(false);
+    }
 
     $urlRouterProvider.otherwise('/');
   })

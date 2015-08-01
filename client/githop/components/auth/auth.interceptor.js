@@ -2,9 +2,9 @@
  *
  * Created by githop on 7/31/15.
  */
-
-/*@ngInject*/
 let AuthInterceptor = function(AuthToken, API_URL) {
+  'ngInject';
+
   return {
     request: addToken
   };

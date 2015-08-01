@@ -7,8 +7,8 @@ import AuthToken from './auth-token.factory';
 import User from './user.srv';
 
 let authModule = angular.module('githop.auth', [])
-  .factory('AuthInterceptor', AuthInterceptor)
   .factory('AuthToken', AuthToken)
+  .factory('AuthInterceptor', AuthInterceptor)
   .factory('User', User);
 
 export default authModule;

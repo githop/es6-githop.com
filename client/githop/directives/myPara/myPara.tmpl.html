@@ -1,0 +1,6 @@
+<div ng-repeat="para in c.header.paragraphs | orderBy: 'id*1' | limitTo:c.limit:c.start track by para.id"
+     ng-mouseenter="c.adminShow()"
+     ng-mouseleave="c.adminHide()">
+  <a href="" ng-click="para.edit()" ng-if="c.canEdit">edit paragraph</a>
+  <p ng-bind-html="para.attributes.body"></p>
+</div>

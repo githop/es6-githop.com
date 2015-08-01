@@ -3,8 +3,9 @@
  * Created by githop on 7/31/15.
  */
 
-/*@ngInject*/
 let AuthToken = function($window) {
+  'ngInject';
+
   var key = 'auth-token';
   var store = $window.localStorage;
   var AuthToken = {};

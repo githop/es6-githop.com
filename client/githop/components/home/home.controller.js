@@ -1,18 +1,18 @@
 /**
  * Created by githop on 7/31/15.
  */
-/*@ngInject*/
+
 class HomeCtrl {
   constructor(User) {
+    'ngInject';
     this.User = User;
     this.currentUser = User.currentUser();
   }
 
   login() {
-    var currentUser = this.currentUser;
+    var self = this;
     this.User.login().then(function(user) {
-      currentUser = user;
-      console.log(currentUser);
+      self.currentUser = user;
     });
   }
 
@@ -20,5 +20,6 @@ class HomeCtrl {
     this.currentUser = this.User.logout();
   }
 }
+
 
 export default HomeCtrl;
