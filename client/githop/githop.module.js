@@ -6,6 +6,7 @@ import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-material';
 import 'angular-material/angular-material.css!';
+import 'angular-sanitize';
 import Components from './components/components';
 import Directives from './directives/directives';
 import GithopComponent from './githop.comp';
@@ -13,6 +14,7 @@ import GithopComponent from './githop.comp';
 let appModule = angular.module('githop', [
   'ui.router',
   'ngMaterial',
+  'ngSanitize',
   Components.name,
   Directives.name
 ])

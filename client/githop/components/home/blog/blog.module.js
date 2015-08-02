@@ -7,15 +7,15 @@ import angular from 'angular';
 import 'angular-ui-router';
 import './blog.css!';
 import template from './blog.tmpl.html!text';
-import Posts from './posts/posts.module';
+import Post from './posts/post.module';
 import Models from './models/models.module';
 import BlogCtrl from './blog.controller';
 import Resources from './resources.srv';
 
 let blogModule = angular.module('githop.blog', [
   'ui.router',
-  Models.name
-  //Posts.name
+  Models.name,
+  Post.name
 ])
   .config(($stateProvider) => {
     $stateProvider

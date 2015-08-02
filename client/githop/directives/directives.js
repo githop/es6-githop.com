@@ -12,7 +12,7 @@ import myRankCard from './myRankCard/rankcard.directive';
 
 let directivesModule = angular.module('githop.directives', [])
   .directive('scrollNav', scrollNav)
-  .directive('myPara', myHeader)
+  .directive('myHeader', myHeader)
   .directive('myPara', myPara)
   .directive('myRankCard', myRankCard);
 

@@ -1,0 +1,47 @@
+<div id="blog-page" layout="column" layout-padding layout-margin>
+  <md-content>
+    <md-card class="blog-card">
+      <img ng-src="{{Post.post.imgs[0].attributes.href}}" alt="{{Post.post.imgs[0].attributes.title}}"/>
+      <md-card-content>
+
+        <my-rank-card
+            sentiment-rank="{{Post.post.attributes.sentimentRank}}"
+            positive-wc="{{Post.post.attributes.positiveWc}}"
+            negative-wc="{{Post.post.attributes.negativeWc}}"
+            neutral-wc="{{Post.post.attributes.neutralWc}}"></my-rank-card>
+
+        <h1>{{Post.post.attributes.title}}</h1>
+        <p>Posted on: {{Post.post.attributes.postedOn | date}}, By:{{Post.post.author.attributes.username}}</p>
+
+        <my-header header="Post.post.headers[0]"></my-header>
+        <p my-para header="Post.post.headers[0]" start="0" limit="2"></p>
+
+        <my-header header="Post.post.headers[1]"></my-header>
+        <p my-para header="Post.post.headers[1]" start="0" limit="1"></p>
+        <div class="post-img"><img ng-src="{{Post.post.imgs[1].attributes.href}}" alt="{{Post.post.imgs[1].attributes.title}}"/></div>
+
+        <p my-para header="Post.post.headers[1]" start="1" limit="1"></p>
+        <div class="post-img"><img ng-src="{{Post.post.imgs[2].attributes.href}}" alt="{{Post.post.imgs[2].attributes.title}}"/></div>
+
+        <p my-para header="Post.post.headers[1]" start="2" limit="1"></p>
+        <div class="post-img"><img ng-src="{{Post.post.imgs[3].attributes.href}}" alt="{{Post.post.imgs[3].attributes.title}}"/></div>
+
+        <p my-para header="Post.post.headers[1]" start="3" limit="1"></p>
+
+        <my-header header="Post.post.headers[2]"></my-header>
+        <p my-para header="Post.post.headers[2]" start="0" limit="1"></p>
+        <div class="post-img"><img ng-src="{{Post.post.imgs[4].attributes.href}}" alt="{{Post.post.imgs[4].attributes.title}}"/></div>
+
+        <p my-para header="Post.post.headers[2]" start="1" limit="2"></p>
+        <div class="post-img"><img ng-src="{{Post.post.imgs[5].attributes.href}}" alt="{{Post.post.imgs[5].attributes.title}}"/></div>
+
+        <p my-para header="Post.post.headers[2]" start="3" limit="1"></p>
+
+        <my-header header="Post.post.headers[3]"></my-header>
+        <p my-para header="Post.post.headers[3]" start="0" limit="2"></p>
+
+      </md-card-content>
+    </md-card>
+  </md-content>
+</div>
+

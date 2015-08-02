@@ -38,18 +38,6 @@ let homeModule = angular.module('githop.home', [
         url: '/',
         template: home
       });
-
-      //.state('home.blog.post', {
-      //  url: '/posts/{postId}',
-      //  views: {
-      //    'body@home': {
-      //      templateUrl: function($stateParams) {
-      //        return 'app/home/blog/post/post' + $stateParams.postId + '.tmpl.html';
-      //      },
-      //      controller: 'PostCtrl as Post'
-      //    }
-      //  }
-      //});
   })
   .controller('HomeCtrl', HomeCtrl);
 

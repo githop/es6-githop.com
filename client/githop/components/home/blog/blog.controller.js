@@ -8,13 +8,12 @@ class BlogCtrl {
   constructor($state, Resources) {
     'ngInject';
     this.$state = $state;
-    this.Resources = Resources;
     this.posts = Resources.getArticles();
   }
 
-  //goToPost(id) {
-  //  this.$state.go('home.blog.post', {postId: id});
-  //}
+  goToPost(id) {
+    this.$state.go('home.blog.post', {postId: id});
+  }
 }
 
 export default BlogCtrl;
