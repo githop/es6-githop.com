@@ -21,7 +21,7 @@ let resumeModule = angular.module('githop.resume', [
       url: '/resume',
       template: template,
       controller: 'ResumeCtrl as Res'
-    })
+    });
   })
   .controller('ResumeCtrl', ResumeCtrl)
   .directive('tooltip', TooltipDirective);

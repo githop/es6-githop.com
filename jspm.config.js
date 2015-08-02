@@ -29,6 +29,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.13",
     "d3": "github:mbostock/d3@3.5.6",
     "jquery": "github:components/jquery@2.1.4",
+    "lodash": "npm:lodash@3.10.0",
     "material-design-icons": "npm:material-design-icons@2.0.0",
     "ng-donut": "github:wildhoney/ngdonut@0.1.5",
     "orbitbot/ng-appcache": "github:orbitbot/ng-appcache@2.0.0",
@@ -146,6 +147,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:lodash@3.10.0": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"

@@ -1,0 +1,32 @@
+<div id="blog-page" layout="column" layout-padding layout-margin>
+  <md-content>
+    <div ng-if="Blog.posts.length === 0" class="pre-load">
+      <md-card class="blog-card">
+          <md-progress-linear md-mode="indeterminate" ></md-progress-linear>
+      </md-card>
+    </div>
+    <div ng-if="Blog.posts.length !== 0" class="blog-roll animate-if">
+      <div ng-repeat="post in Blog.posts | orderBy:'-attributes.postedOn' " ng-click="Blog.goToPost(post.id)">
+        <md-card class="blog-card clickable">
+          <!--<pre>{{post | json}}</pre>-->
+          <div class="header-bg"><img ng-src="{{post.imgs[0].attributes.href}}"></div>
+          <md-card-content>
+
+            <div layout="row" layout-sm="column" layout-align="space-between center">
+              <h2>{{post.attributes.title}}</h2>
+
+              <p>{{post.attributes.postedOn | date}} by: {{post.author.attributes.username}}</p>
+            </div>
+
+
+            <h4>{{post.headers[0].attributes.text}}</h4>
+
+            <p>{{post.headers[0].paragraphs[0].attributes.body.slice(0,140)}}...</p>
+
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </md-content>
+
+</div>

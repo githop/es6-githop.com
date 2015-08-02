@@ -1,0 +1,99 @@
+#blog-page {
+  background-color: #f1f1f1;
+  margin-top: 128px;
+
+  md-content {
+    background-color: #f1f1f1;
+  }
+}
+
+.edit-para {
+  width: 80%;
+}
+
+.rankings {
+  background-color: #f1f1f1;
+  width: 33%;
+  position: relative;
+  float: right;
+  top: -83px;
+  font-size: 12px;
+}
+div.header-bg {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding: 30.25% 0 0 0;
+  overflow: hidden;
+  img {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+md-card.blog-card {
+  margin: 20px auto;
+  width: 66%;
+}
+
+md-card.input-analysis {
+  width: 94%;
+}
+
+.post-img {
+  text-align: center;
+  img {
+    width:90%;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px) {
+
+  h1 {
+    font-size: 1.3em;
+  }
+  .rankings {
+    background-color: #f1f1f1;
+    width: 40%;
+    position: relative;
+    float: right;
+    top: -83px;
+    .md-button {
+      font-size: 9px;
+    }
+  }
+
+  md-card.blog-card {
+    width: 98%;
+  }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px ) {
+  md-card.blog-card {
+    width: 85%;
+  }
+}
+
+@media screen
+and (min-width: 416px)
+and (max-width: 1024px ) {
+  md-card.blog-card {
+    width: 85%;
+  }
+}

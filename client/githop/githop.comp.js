@@ -9,7 +9,7 @@ let GithopComponent = ()=> {
   return {
     template,
     restrict: 'E'
-  }
+  };
 };
 
 export default GithopComponent;

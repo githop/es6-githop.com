@@ -7,7 +7,7 @@ let UserFactory = function($http, $q, $window, $mdDialog, $mdToast, AuthToken, A
   'ngInject';
   var User = {};
 
-  var _user = undefined;
+  var _user;
 
   //public methods binding
   User.login = login;
