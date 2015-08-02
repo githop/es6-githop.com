@@ -3,10 +3,12 @@
  */
 
 class HomeCtrl {
-  constructor(User) {
+  constructor(User, Analysis, Updates) {
     'ngInject';
     this.User = User;
     this.currentUser = User.currentUser();
+    this.analyzeWords = Analysis.analyzeWords;
+    Updates.check();
   }
 
   login() {

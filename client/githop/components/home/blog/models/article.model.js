@@ -55,7 +55,6 @@ let article = function() {
       });
     }
 
-    //todo add edit
   }
 
   return Article;

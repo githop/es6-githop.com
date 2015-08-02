@@ -11,6 +11,8 @@ import Post from './posts/post.module';
 import Models from './models/models.module';
 import BlogCtrl from './blog.controller';
 import Resources from './resources.srv';
+import Crud from './crud.srv';
+
 
 let blogModule = angular.module('githop.blog', [
   'ui.router',
@@ -27,6 +29,7 @@ let blogModule = angular.module('githop.blog', [
       });
   })
   .factory('Resources', Resources)
+  .factory('Crud', Crud)
   .controller('BlogCtrl', BlogCtrl);
 
 export default blogModule;

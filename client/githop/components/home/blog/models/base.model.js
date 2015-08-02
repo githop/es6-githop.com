@@ -4,9 +4,10 @@
 import _ from 'lodash';
 
 class Base {
-constructor(data) {
-  _.extend(this, data);
-}
+  constructor(data) {
+    _.extend(this, data);
+  }
+
   _pluckIds(type) {
     for (var r in this.relationships) {
       if (r === type) {

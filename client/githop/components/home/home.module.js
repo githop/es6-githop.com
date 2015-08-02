@@ -11,6 +11,8 @@ import home from './home.tmpl.html!text';
 import Blog from './blog/blog.module';
 import HomeCtrl from './home.controller';
 import Resume from './resume/resume.module';
+import Analysis from './analysis.srv';
+import sentiment from './sentiment.filter';
 
 let homeModule = angular.module('githop.home', [
   'ui.router',
@@ -39,6 +41,8 @@ let homeModule = angular.module('githop.home', [
         template: home
       });
   })
+  .factory('Analysis', Analysis)
+  .filter('sentiment', sentiment)
   .controller('HomeCtrl', HomeCtrl);
 
 export default homeModule;

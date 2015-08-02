@@ -4,11 +4,11 @@
 import Base from './base.model';
 import _ from 'lodash';
 
-let header = function() {
-
+let header = function(Crud) {
+  'ngInject';
   class Header extends Base {
     constructor(data) {
-      super(data);
+      super();
       if (data) {
         data.paragraphs = [];
         _.extend(this, data);
@@ -26,6 +26,15 @@ let header = function() {
           this.paragraphs.push(para);
         }
       }
+    }
+
+    edit() {
+      var self = this;
+      Crud.update(self).then(function(h) {
+        if (h !== undefined) {
+          self.attributes.text = h.text;
+        }
+      });
     }
   }
   return Header;

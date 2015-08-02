@@ -11,12 +11,12 @@ let myPara = function() {
 
     c.adminShow = function() {
       if (User.currentUser()) {
-        return c.canEdit = true
+        c.canEdit = true;
       }
     };
     c.adminHide = function() {
-      return c.canEdit = false;
-    }
+      c.canEdit = false;
+    };
   };
 
   return {
@@ -30,7 +30,7 @@ let myPara = function() {
     controller: _paraCtrl,
     controllerAs: 'c',
     bindToController: true
-  }
+  };
 };
 
 export default myPara;
