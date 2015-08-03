@@ -17,6 +17,10 @@
   src: url('/assets/fonts/fontawesome-webfont.woff');
 }
 
+$fa-var-github: "\f09b";
+
+.fa-github:before { content: $fa-var-github; }
+
 .fa {
   //display: inline-block;
   font-family: 'FontAwesome';
@@ -96,6 +100,7 @@ md-card.splash-card {
   position: fixed;
   text-align: center;
   top: 3em;
+  padding-bottom: 5px;
   left: 33%;
   margin: 0 auto;
   width: 33%;
@@ -118,7 +123,7 @@ md-card.splash-card {
   border-radius: 50%;
   position: relative;
   bottom: 52px;
-  left: 148px;
+  left: 152px;
 
 }
 
@@ -185,6 +190,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     position: fixed;
     text-align: center;
     top: 3em;
+    padding-bottom: 5px;
     left: 33%;
     margin: 0 auto;
     width: 33%;
@@ -204,6 +210,7 @@ and (min-resolution: 192dpi) {
     text-align: center;
     top: 3em;
     left: 33%;
+    padding-bottom: 5px;
     margin: 0 auto;
     width: 33%;
     background-color: #fff;
@@ -216,16 +223,27 @@ and (min-resolution: 192dpi) {
 and (min-device-width: 768px)
 and (max-device-width: 1024px ) {
   #body {
-    height: 480px;
+    min-height: 480px;
   }
+
+  .md-avatar.pie {
+    width: 96px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 52px;
+
+
+  }
+
   md-card.splash-card {
     position: relative !important;
     text-align: center;
-    //margin-top: 130px;
+    margin-top: 50px;
+    padding-bottom: 5px;
     top: 130px !important;
     left: 20px !important;
     //height: 380px;
-    width: 66%;
+    width: 33%;
     background-color: #fff;
     img {
       width: 68px;
@@ -237,15 +255,26 @@ and (max-device-width: 1024px ) {
 }
 
 
-//mobile phone
+//mobile phones
 
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 568px){
+
+  .md-avatar.pie {
+    width: 96px;
+    border-radius: 50%;
+    position: relative;
+    top: 152px;
+    left: 52px;
+
+  }
+
   md-card.splash-card {
     position: static;
     text-align: center;
     margin-top: 130px;
+    padding-bottom: 5px;
     height: 240px;
     width: 66%;
     background-color: #fff;
@@ -256,6 +285,21 @@ and (max-device-width: 568px){
     h1 {
       font-size: 24px;
     }
+  }
+}
+
+//iphone 6, 6 plus
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 568px){
+
+  .md-avatar.pie {
+    width: 96px;
+    border-radius: 50%;
+    position: relative;
+    top: -52px;
+    left: 152px;
+
   }
 }
 

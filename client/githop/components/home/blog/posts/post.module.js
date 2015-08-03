@@ -13,8 +13,9 @@ import post5 from './post5.tmpl.html!text';
 import post6 from './post6.tmpl.html!text';
 import post7 from './post7.tmpl.html!text';
 import post8 from './post8.tmpl.html!text';
+import post9 from './post9.tmpl.html!text';
 
-const templates = [post1, post2, post3, post4, post5, post6, post7, post8];
+const templates = [post1, post2, post3, post4, post5, post6, post7, post8, post9];
 
 let _templateProvider = function(id) {
   let index = id - 1;

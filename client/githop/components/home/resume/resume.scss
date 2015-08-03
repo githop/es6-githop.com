@@ -128,22 +128,6 @@ and (max-device-width: 568px) {
 @media only screen
 and (min-device-width: 768px)
 and (max-device-width: 1024px ) {
-  .md-avatar.pie {
-    width: 96px;
-    border-radius: 50%;
-    position: relative;
-    bottom: 52px;
-    left: 0
 
-  }
-  md-card.splash-card {
-    position: fixed;
-    text-align: center;
-    top: 3em;
-    left: 33%;
-    margin: 0 auto;
-    width: 33%;
-    background-color: #fff;
-    z-index: 10;
-  };
+
 }

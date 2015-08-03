@@ -23,7 +23,7 @@ let appModule = angular.module('githop', [
   Directives.name
 ])
   .value('duScrollOffset', 70)
-  .constant('API_URL', 'http://githop.com')
+  .constant('API_URL', 'http://localhost:3000')
 
   .config(($urlRouterProvider, $httpProvider, $compileProvider, API_URL) => {
     $httpProvider.interceptors.push('AuthInterceptor');

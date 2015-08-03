@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   src: url("/assets/fonts/Roboto-Regular.ttf"); }
 @font-face {
@@ -10,6 +11,9 @@
   font-style: normal;
   font-weight: normal;
   src: url("/assets/fonts/fontawesome-webfont.woff"); }
+.fa-github:before {
+  content: ""; }
+
 .fa {
   font-family: 'FontAwesome';
   font-style: normal;
@@ -70,6 +74,7 @@ md-card.splash-card {
   position: fixed;
   text-align: center;
   top: 3em;
+  padding-bottom: 5px;
   left: 33%;
   margin: 0 auto;
   width: 33%;
@@ -89,7 +94,7 @@ md-card.splash-card {
   border-radius: 50%;
   position: relative;
   bottom: 52px;
-  left: 148px; }
+  left: 152px; }
 
 .analysis-results {
   width: 80%; }
@@ -131,6 +136,7 @@ footer md-toolbar {
     position: fixed;
     text-align: center;
     top: 3em;
+    padding-bottom: 5px;
     left: 33%;
     margin: 0 auto;
     width: 33%;
@@ -142,30 +148,47 @@ footer md-toolbar {
     text-align: center;
     top: 3em;
     left: 33%;
+    padding-bottom: 5px;
     margin: 0 auto;
     width: 33%;
     background-color: #fff;
     z-index: 10; } }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   #body {
-    height: 480px; }
+    min-height: 480px; }
+
+  .md-avatar.pie {
+    width: 96px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 52px; }
 
   md-card.splash-card {
     position: relative !important;
     text-align: center;
+    margin-top: 50px;
+    padding-bottom: 5px;
     top: 130px !important;
     left: 20px !important;
-    width: 66%;
+    width: 33%;
     background-color: #fff; }
     md-card.splash-card img {
       width: 68px; }
     md-card.splash-card h1 {
       font-size: 24px; } }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .md-avatar.pie {
+    width: 96px;
+    border-radius: 50%;
+    position: relative;
+    top: 152px;
+    left: 52px; }
+
   md-card.splash-card {
     position: static;
     text-align: center;
     margin-top: 130px;
+    padding-bottom: 5px;
     height: 240px;
     width: 66%;
     background-color: #fff;
@@ -174,6 +197,13 @@ footer md-toolbar {
       width: 68px; }
     md-card.splash-card h1 {
       font-size: 24px; } }
+@media only screen and (min-device-width: 375px) and (max-device-width: 568px) {
+  .md-avatar.pie {
+    width: 96px;
+    border-radius: 50%;
+    position: relative;
+    top: -52px;
+    left: 152px; } }
 .material-icons.md-18 {
   font-size: 18px; }
 
