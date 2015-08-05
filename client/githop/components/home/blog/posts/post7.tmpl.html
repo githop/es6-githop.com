@@ -22,13 +22,13 @@
         <my-header header="Post.post.headers[2]"></my-header>
 
         <p my-para header="Post.post.headers[2]" limit="1" start="0"></p>
-        <div class="post-img"><img ng-src="{{Post.post.imgs[1].attributes.href}}" alt="{{Post.post.imgs[1].attributes.title}}"/></div>
+        <my-img imgs="Post.post.imgs" index="1"></my-img>
         <p my-para header="Post.post.headers[2]" limit="1" start="1"></p>
-        <div class="post-img"><img ng-src="{{Post.post.imgs[2].attributes.href}}" alt="{{Post.post.imgs[2].attributes.title}}"/></div>
+        <my-img imgs="Post.post.imgs" index="2"></my-img>
 
         <my-header header="Post.post.headers[3]"></my-header>
         <p my-para header="Post.post.headers[3]" limit="1" start="0"></p>
-        <div class="post-img"><img ng-src="{{Post.post.imgs[3].attributes.href}}" alt="{{Post.post.imgs[3].attributes.title}}"/></div>
+        <my-img imgs="Post.post.imgs" index="3"></my-img>
 
         <my-header header="Post.post.headers[4]"></my-header>
         <p my-para header="Post.post.headers[4]" limit="2" start="0"></p>
@@ -38,7 +38,7 @@
 
         <my-header header="Post.post.headers[6]"></my-header>
         <p my-para header="Post.post.headers[6]" limit="2" start="0"></p>
-        <div class="post-img"><img ng-src="{{Post.post.imgs[4].attributes.href}}" alt="{{Post.post.imgs[4].attributes.title}}"/></div>
+        <my-img imgs="Post.post.imgs" index="4"></my-img>
         <p my-para header="Post.post.headers[6]" limit="1" start="2"></p>
 
 

@@ -27,12 +27,11 @@
 
         <my-header header="Post.post.headers[0]"></my-header>
         <p my-para header="Post.post.headers[0]" limit="1" start="0"></p>
-        <div class="post-img"><img ng-src="{{Post.post.imgs[1].attributes.href}}"
-                                   alt="{{Post.post.imgs[1].attributes.title}}"/></div>
+        <my-img imgs="Post.post.imgs" index="1"></my-img>
 
         <p my-para header="Post.post.headers[0]" limit="2" start="1"></p>
-        <div class="post-img"><img ng-src="{{Post.post.imgs[2].attributes.href}}"
-                                   alt="{{Post.post.imgs[2].attributes.title}}"/></div>
+        <my-img imgs="Post.post.imgs" index="2"></my-img>
+
         <p my-para header="Post.post.headers[0]" limit="2" start="4"></p>
 
         <my-header header="Post.post.headers[1]"></my-header>
