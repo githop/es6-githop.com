@@ -5,6 +5,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 import './resume.css!';
+import 'angular-scroll';
 import 'd3';
 import 'ng-donut';
 import template from './resume.tmpl.html!text';
@@ -13,7 +14,8 @@ import TooltipDirective from './tooltip.directive';
 
 let resumeModule = angular.module('githop.resume', [
   'ui.router',
-  'ngDonut'
+  'ngDonut',
+  'duScroll'
 ])
   .config(($stateProvider) => {
     $stateProvider

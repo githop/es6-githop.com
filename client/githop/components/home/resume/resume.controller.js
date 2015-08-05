@@ -4,7 +4,9 @@
  */
 
 class ResumeCtrl {
-  constructor() {
+  constructor($document) {
+    'ngInject';
+    $document.scrollTop(0);
     var Res = this;
 
     Res.toc = [

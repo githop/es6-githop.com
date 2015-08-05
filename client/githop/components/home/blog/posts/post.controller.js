@@ -4,12 +4,14 @@
  */
 
 class PostCtrl {
-  constructor($stateParams, Resources) {
+  constructor($stateParams, $document, Resources) {
     'ngInject';
     var self = this;
     Resources.getArticle($stateParams.postId).then(function(post) {
       self.post = post;
     });
+
+    $document.scrollTop(0);
   }
 }
 
