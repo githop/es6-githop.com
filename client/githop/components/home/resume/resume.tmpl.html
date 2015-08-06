@@ -10,7 +10,7 @@
       <md-card-content>
         <md-list class="toc">
           <md-list-item ng-repeat="c in Res.toc" du-scrollspy du-smooth-scroll>
-            <i class="material-icons">{{c.icon}}</i>
+            <i class="{{c.icon}} mdi-24"></i>
             <div class="md-list-item-text">
               <md-button href="{{c.id}}" du-scrollspy du-smooth-scroll >{{c.text}}</md-button>
             </div>
@@ -36,7 +36,7 @@
 
           <div layout="row" layout-align="space-between">
             <div layout="row" layout-sm="column" layout-align="center center" ng-repeat="c in Res.contactInfo" class="contact-info">
-              <a ng-href="{{c.link}}" alt={{c.text}} target="_blank"><i ng-class="{'fa fa-github': c.immaterial, 'material-icons md-36': !c.immaterial }">{{c.icon}}</i></a>
+              <a ng-href="{{c.link}}" alt={{c.text}} target="_blank"><i class="{{c.icon}} mdi-24"></i></a>
               <md-button hide-sm ng-href="{{c.link}}" alt={{c.text}} target="_blank">{{c.text}}</md-button>
             </div>
           </div>
@@ -70,7 +70,7 @@
       <md-card id="exp">
         <md-toolbar class="md-warn">
           <div class="md-toolbar-tools md-toolbar-tools-bottom">
-            <i class="material-icons md-36">work</i>
+            <i class="mdi mdi-briefcase mdi-36"></i>
 
             <h3>Professional Experience</h3>
 
@@ -87,7 +87,7 @@
 
             <md-list>
               <md-list-item class="md-1-line" ng-repeat="win in Res.wins">
-                <i class="material-icons">done</i></br>
+                <i class="mdi mdi-check mdi-24"></i></br>
                 <div class="md-list-item-text" flex>{{win.text}}</div>
               </md-list-item>
             </md-list>
@@ -111,7 +111,7 @@
       <md-card id="projects">
         <md-toolbar class="md-warn">
           <div class="md-toolbar-tools md-toolbar-tools-bottom">
-            <i class="material-icons md-36">code</i>
+            <i class="mdi mdi-xml mdi-36"></i>
 
             <h3>Projects</h3>
           </div>
@@ -166,7 +166,7 @@
       <md-card id="talks">
         <md-toolbar class="md-warn">
           <div class="md-toolbar-tools md-toolbar-tools-bottom">
-            <i class="material-icons md-36">group</i>
+            <i class="mdi mdi-presentation mdi-36"></i>
 
             <h3>Community / Talks</h3>
           </div>
@@ -195,7 +195,7 @@
       <md-card id="competition">
         <md-toolbar class="md-warn">
           <div class="md-toolbar-tools md-toolbar-tools-bottom">
-            <i class="material-icons md-36">equalizer</i>
+            <i class="mdi mdi-poll mdi-36"></i>
 
             <h3>Startup Competitions</h3>
           </div>
@@ -215,7 +215,7 @@
       <md-card id="other">
         <md-toolbar class="md-warn">
           <div class="md-toolbar-tools md-toolbar-tools-bottom">
-            <i class="material-icons md-36">build</i>
+            <i class="mdi mdi-layers mdi-36"></i>
 
             <h3>Other</h3>
           </div>
@@ -236,7 +236,7 @@
       <md-card id="edu">
         <md-toolbar class="md-warn">
           <div class="md-toolbar-tools md-toolbar-tools-bottom">
-            <i class="material-icons md-36">school</i>
+            <i class="mdi mdi-school mdi-36"></i>
 
             <h3>Education</h3>
           </div>

@@ -4,11 +4,7 @@
       <img ng-src="{{Post.post.imgs[0].attributes.href}}" alt="{{Post.post.imgs[0].attributes.title}}"/>
       <md-card-content>
 
-        <my-rank-card
-            sentiment-rank="{{Post.post.attributes.sentimentRank}}"
-            positive-wc="{{Post.post.attributes.positiveWc}}"
-            negative-wc="{{Post.post.attributes.negativeWc}}"
-            neutral-wc="{{Post.post.attributes.neutralWc}}"></my-rank-card>
+        <my-rank-card data="Post.post.attributes"></my-rank-card>
 
         <h1>{{Post.post.attributes.title}}</h1>
         <p>Posted on: {{Post.post.attributes.postedOn | date}}, By:{{Post.post.author.attributes.username}}</p>

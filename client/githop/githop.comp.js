@@ -4,6 +4,7 @@
  */
 import template from './githop.tmpl.html!text';
 import './githop.css!';
+import '../assets/materialdesignicons.css!';
 
 let GithopComponent = ()=> {
   return {

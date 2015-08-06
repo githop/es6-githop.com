@@ -4,10 +4,11 @@
  */
 
 class BlogCtrl {
-  constructor($state, Resources) {
+  constructor($state, $document, Resources) {
     'ngInject';
     this.$state = $state;
     this.posts = Resources.getArticles();
+    $document.scrollTop(0);
   }
 
   goToPost(id) {

@@ -10,20 +10,20 @@ class ResumeCtrl {
     var Res = this;
 
     Res.toc = [
-      {id: '#intro', icon: 'face', text: 'About'},
-      {id: '#exp', icon: 'work', text: 'Experience'},
-      {id: '#projects', icon: 'code', text: 'Projects'},
-      {id: '#talks', icon: 'group', text: 'Talks'},
-      {id: '#competition', icon: 'equalizer', text: 'Competition'},
-      {id: '#other', icon: 'build', text: 'Other'},
-      {id: '#edu', icon: 'school', text: 'Education'}
+      {id: '#intro', icon: 'mdi mdi-information', text: 'About'},
+      {id: '#exp', icon: 'mdi mdi-briefcase', text: 'Experience'},
+      {id: '#projects', icon: 'mdi mdi-xml', text: 'Projects'},
+      {id: '#talks', icon: 'mdi mdi-presentation', text: 'Talks'},
+      {id: '#competition', icon: 'mdi mdi-poll', text: 'Competition'},
+      {id: '#other', icon: 'mdi mdi-layers', text: 'Other'},
+      {id: '#edu', icon: 'mdi mdi-school', text: 'Education'}
     ];
 
     Res.contactInfo = [
-      {link: 'mailto:tom@githop.com', icon: 'email', text: 'tom@githop.com'},
-      {link: '#', icon: 'language', text: 'githop.com'},
-      {link: 'tel:+1-513-675-4467', icon: 'contact_phone', text: '(513) 675 - 4467'},
-      {link: 'https://github.com/githop', text: 'github', immaterial: true}
+      {link: 'mailto:tom@githop.com', icon: 'mdi mdi-email', text: 'tom@githop.com'},
+      {link: '#', icon: 'mdi mdi-web', text: 'githop.com'},
+      {link: 'tel:+1-513-675-4467', icon: 'mdi mdi-phone', text: '(513) 675 - 4467'},
+      {link: 'https://github.com/githop', icon: 'mdi mdi-github-circle', text: 'github'}
     ];
 
     Res.skills = {

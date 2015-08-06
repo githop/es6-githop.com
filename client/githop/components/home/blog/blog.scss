@@ -11,14 +11,6 @@
   width: 80%;
 }
 
-.rankings {
-  background-color: #f1f1f1;
-  width: 33%;
-  position: relative;
-  float: right;
-  top: -83px;
-  font-size: 12px;
-}
 div.header-bg {
   display: block;
   width: 100%;
@@ -65,16 +57,6 @@ and (max-device-width: 568px) {
 
   h1 {
     font-size: 1.3em;
-  }
-  .rankings {
-    background-color: #f1f1f1;
-    width: 40%;
-    position: relative;
-    float: right;
-    top: -83px;
-    .md-button {
-      font-size: 9px;
-    }
   }
 
   md-card.blog-card {
