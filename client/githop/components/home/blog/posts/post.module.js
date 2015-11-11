@@ -15,11 +15,10 @@ import post7 from './post7.tmpl.html!text';
 import post8 from './post8.tmpl.html!text';
 import post9 from './post9.tmpl.html!text';
 
-const templates = [post1, post2, post3, post4, post5, post6, post7, post8, post9];
+const templates = {post1, post2, post3, post4, post5, post6, post7, post8, post9};
 
-let _templateProvider = function(id) {
-  let index = id - 1;
-  return templates[index];
+let _templateProvider = function(i) {
+  return templates[`post${i}`];
 };
 
 let postModule = angular.module('githop.post', [

@@ -6,24 +6,26 @@
 let AuthToken = function($window) {
   'ngInject';
 
-  var key = 'auth-token';
-  var store = $window.localStorage;
+  var _key = 'auth-token';
+  var _store = $window.localStorage;
   var AuthToken = {};
 
-  AuthToken.setToken = function(token) {
-    if (token) {
-      store.setItem(key, token);
-    } else {
-      store.removeItem(key);
-    }
-  };
+  AuthToken.setToken = setToken;
+  AuthToken.getToken = getToken;
 
-  AuthToken.getToken = function() {
-    return store.getItem(key);
-  };
+  function setToken(token) {
+    if (token) {
+      _store.setItem(_key, token);
+    } else {
+      _store.removeItem(_key);
+    }
+  }
+
+  function getToken() {
+    return _store.getItem(_key);
+  }
 
   return AuthToken;
-
 };
 
 export default AuthToken;

@@ -35,17 +35,16 @@ let myRankCard = function() {
         .content
       (
         `The text content of this post was analyzed with a text sentiment analysis algorithim.
-         It looks for positive, negative, or neutral words (based upon a dictionary) and will
-         tell you the overall 'sentiment' of this post based upon the individual word scores.
-         I wrote a post on this topic, free to check it out!`
+         It looks for positive, negative, or neutral words (using a 6k word dictionary) and will
+         calculate the overall 'sentiment' of this post based upon the individual word scores.
+         I wrote a blog post on how I did this, free to check it out!`
       )
-        .ok('Sounds Cool!')
-        .cancel('sentiment analysis blog post');
+        .ok('ok!')
+        .cancel('sentiment post');
 
       this.$mdDialog.show(dialog).then(() => {
         console.log('ok');
       }, () => {
-        console.log('gotopost');
         this.$state.go('home.blog.post', {postId: 6});
       });
     }

@@ -16,7 +16,7 @@ let header = function(Crud) {
     }
 
     getParaIds() {
-      return this._pluckIds('paragraphs', this.relationships);
+      return this._getParaIds();
     }
 
     setPara(para) {

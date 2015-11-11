@@ -17,7 +17,7 @@ class Base {
   }
 
   _getParaIds() {
-    return this.constructor._pluckIds('paragraphs', this.relationships);
+    return this._pluckIds('paragraphs', this.relationships);
   }
 
 }

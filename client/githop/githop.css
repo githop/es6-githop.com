@@ -170,7 +170,7 @@ footer md-toolbar {
       height: 32px; }
       .rankings md-toolbar .md-toolbar-tools {
         position: relative;
-        top: 0px;
+        top: -1rem;
         padding: 5px; }
     .rankings .smiles {
       position: absolute;

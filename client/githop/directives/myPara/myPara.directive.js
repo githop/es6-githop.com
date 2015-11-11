@@ -4,8 +4,7 @@
 import template from './myPara.tmpl.html!text';
 
 let myPara = function() {
-
-  var _paraCtrl = function(User) {
+  var controller = function(User) {
     'ngInject';
     var c = this;
 
@@ -19,15 +18,17 @@ let myPara = function() {
     };
   };
 
-  return {
-    template,
-    restrict: 'A',
-    scope: {
+  var scope = {
       header: '=',
       limit: '@',
       start: '@'
-    },
-    controller: _paraCtrl,
+    };
+
+  return {
+    restrict: 'A',
+    template,
+    controller,
+    scope,
     controllerAs: 'c',
     bindToController: true
   };

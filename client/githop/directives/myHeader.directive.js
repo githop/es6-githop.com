@@ -11,7 +11,7 @@ let myHeader = function() {
       if (User.currentUser()) {
         c.header.edit();
       }
-    }
+    };
   };
 
   return {

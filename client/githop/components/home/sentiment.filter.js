@@ -4,7 +4,6 @@
 
 let sentiment = function() {
   return function(input) {
-    //console.log('in filter', input);
     var out = '';
     switch (input) {
       case 1:

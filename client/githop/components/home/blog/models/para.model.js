@@ -22,8 +22,6 @@ let para = function(Crud) {
     }
   }
 
-
-
   return Para;
 };
 
