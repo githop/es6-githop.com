@@ -57,6 +57,9 @@ let homeModule = angular.module('githop.home', [
         //you can access the nav and home controller
         //from any templates that get rendered in 
         //the body view, which is basically the whole app.
+        //the home ctrl is a great place to setup current user 
+        //or auth stuff as you can make it almost globally
+        //available to the rest of the app. 
         url: '/',
         template: home
       });
