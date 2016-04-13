@@ -49,7 +49,7 @@ let homeModule = angular.module('githop.home', [
       .state('home.main', {
         //home is setup to be abstract, and i think abstract
         //states cannot be directly navigated to.
-        //making home.main a child of home view and
+        //making home.main a child of home state and
         //setting the url to '/' makes it so the home state
         //is always active when the user is navigating the app,
         //as every state in the app is a child to home. 
