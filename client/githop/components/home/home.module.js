@@ -25,18 +25,38 @@ let homeModule = angular.module('githop.home', [
         abstract: true,
         views: {
           '@': {
+            //the shell template holds the nav and body template
+            //<shell>
+            //  <nav></nav>
+            //  <body></body>
+            //</shell>
+            //
             template: shell,
             controller: 'HomeCtrl as Home'
           },
           'nav@home': {
             template: nav
           },
+          //the body template is swapped out by UI router
+          //and replaced with the requested content
+          //e.g. blog post, resume
+          //check out the post module to see it in action
           'body@home': {
             template: body
           }
         }
       })
       .state('home.main', {
+        //home is setup to be abstract, and i think abstract
+        //views cannot be directly navigated to.
+        //making home.main a child of home view and
+        //setting the url to '/' makes it so the home state
+        //is always active when the user is navigating the app,
+        //as every state in the app is a child to home. 
+        //with this setup and with controllerAs, 
+        //you can access the nav and home controller
+        //from any templates that get rendered in 
+        //the body view, which is basically the whole app.
         url: '/',
         template: home
       });
