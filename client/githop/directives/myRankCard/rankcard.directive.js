@@ -4,18 +4,28 @@
  */
 import template from './rank.tmpl.html!text';
 
-let myRankCard = function() {
+  const existy = (x) => x != null;
 
   class _ctrl {
-    constructor($timeout, $mdDialog, $state) {
+    constructor($scope, $mdDialog, $state) {
       'ngInject';
       this.$state = $state;
       this.$mdDialog = $mdDialog;
       this.chartData = '';
-      $timeout(() => { this.chartData = this._formatChartData(); }, 800);
+      this.$scope = $scope;
+    }
+
+    $onChanges() {
+      this.$scope.$evalAsync(() => {
+        this.chartData = this._formatChartData();
+      });
     }
 
     _formatChartData() {
+      if (!existy(this.data)) {
+        return '';
+      }
+
       var chartData = [
         {name: 'positive', value: this.data.positiveWc},
         {name: 'negative', value: this.data.negativeWc},
@@ -50,7 +60,7 @@ let myRankCard = function() {
     }
   }
 
-  return {
+  var directive = {
     template,
     restrict: 'EA',
     scope: {},
@@ -60,6 +70,13 @@ let myRankCard = function() {
       data: '='
     }
   };
-};
 
-export default myRankCard;
+  const component = {
+    template,
+    bindings: {
+      data: '<'
+    },
+    controller: _ctrl
+  };
+
+export default component;

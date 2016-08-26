@@ -15,7 +15,7 @@ let directivesModule = angular.module('githop.directives', [])
   .directive('scrollNav', scrollNav)
   .directive('myHeader', myHeader)
   .directive('myPara', myPara)
-  .directive('myRankCard', myRankCard)
+  .component('myRankCard', myRankCard)
   .directive('myImg', myImg);
 
 export default directivesModule;

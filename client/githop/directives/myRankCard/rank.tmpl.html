@@ -1,31 +1,31 @@
 <md-card class="rankings">
   <md-toolbar id="header">
     <div class="md-toolbar-tools">
-      <i class="mdi mdi-help-circle" ng-click="c.infoDialog()"flex></i>
-      <h5>Sentiment Score: {{c.data.sentimentRank}}</h5>
+      <i class="mdi mdi-help-circle" ng-click="$ctrl.infoDialog()"flex></i>
+      <h5>Sentiment Score: {{$ctrl.data.sentimentRank}}</h5>
     </div>
   </md-toolbar>
   <md-card-content layout="column" layout-padding layout-align="center center">
-    <md-progress-circular md-mode="indeterminate" ng-hide="c.loaded"></md-progress-circular>
-    <div ng-show="c.loaded">
+    <md-progress-circular md-mode="indeterminate" ng-hide="$ctrl.loaded"></md-progress-circular>
+    <div ng-show="$ctrl.loaded">
       <section class="smiles">
         <div>
-          <i class="mdi mdi-emoticon-happy pos">{{c.data.positiveWc}}</i>
+          <i class="mdi mdi-emoticon-happy pos">{{$ctrl.data.positiveWc}}</i>
           <md-tooltip>positive words</md-tooltip>
         </div>
         <div>
-          <i class="mdi mdi-emoticon-neutral neu">{{c.data.neutralWc}}</i>
+          <i class="mdi mdi-emoticon-neutral neu">{{$ctrl.data.neutralWc}}</i>
           <md-tooltip>neutral words</md-tooltip>
         </div>
         <div>
-          <i class="mdi mdi-emoticon-sad neg">{{c.data.negativeWc}}</i>
+          <i class="mdi mdi-emoticon-sad neg">{{$ctrl.data.negativeWc}}</i>
           <md-tooltip>negative words</md-tooltip>
         </div>
       </section>
-      <donut ng-model="c.chartData"
+      <donut ng-model="$ctrl.chartData"
              width="120" height="120"
              radius="20" property="'value'"
-             colours="c.chartData.colors"></donut>
+             colours="$ctrl.chartData.colors"></donut>
     </div>
 
   </md-card-content>
