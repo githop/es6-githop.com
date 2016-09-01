@@ -56,7 +56,7 @@
     });
   });
 
-  gulp.task('build', function() {
+  gulp.task('build', ['sass'], function() {
     var dist = path.join(paths.dist + 'githop.js');
     return jspm.bundleSFX(appPath('githop.module'), dist, {})
       .then(function() {
