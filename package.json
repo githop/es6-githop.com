@@ -23,9 +23,13 @@
   "homepage": "https://github.com/githop/githop.com#readme",
   "devDependencies": {
     "exports-loader": "^0.6.3",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
+    "merge-stream": "^1.0.0",
     "rollup": "^0.34.13",
     "rollup-plugin-commonjs": "^4.1.0",
     "rollup-plugin-node-resolve": "^2.0.0",

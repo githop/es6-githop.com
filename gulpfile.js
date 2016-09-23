@@ -3,20 +3,17 @@
 
   var gulp = require('gulp');
   var path = require('path');
-  var jspm = require('jspm');
-  var del  = require('del');
-  var rename = require('gulp-rename');
   var sass = require('gulp-sass');
   var sourcemaps = require('gulp-sourcemaps');
-  var uglify = require('gulp-uglify');
-  var htmlReplace = require('gulp-html-replace');
-  var ngAnnotate = require('gulp-ng-annotate');
-  var serve = require('browser-sync');
-  var manifest = require('gulp-manifest');
+  var merge = require('merge-stream');
+  // var htmlReplace = require('gulp-html-replace');
+  // var ngAnnotate = require('gulp-ng-annotate');
+  // var serve = require('browser-sync');
+  // var manifest = require('gulp-manifest');
   var rollup = require('rollup').rollup;
   const nodeResolve = require('rollup-plugin-node-resolve');
   const typescript = require('rollup-plugin-typescript');
-  const compile = require('google-closure-compiler-js').compile;
+  // const compile = require('google-closure-compiler-js').compile;
   const commonjs = require('rollup-plugin-commonjs');
   const {resolve} = require('path');
   const string = require('rollup-plugin-string');
@@ -122,12 +119,21 @@
   });
 
   gulp.task('sass', function() {
-    return gulp.src(appPath('**/*.scss'))
+
+    var css = gulp.src(appPath('**/*.css'))
+        .pipe(concat(('css.css')));
+
+    var scss = gulp.src(appPath('**/*.scss'))
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(concat('sass.scss'));
+
+    return merge(css, scss)
         .pipe(concat('styles.css'))
         .pipe(gulp.dest(root + '/assets/styles'));
   });
+
+
 
   gulp.task('sass:watch', function() {
     gulp.watch(appPath('**/*.scss'), ['sass']);
