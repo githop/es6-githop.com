@@ -4,13 +4,16 @@
  */
 AuthToken.$inject = ['$window'];
 
-export default function AuthToken($window) {
+interface AuthToken {
+  setToken(authToken:string);
+  getToken();
+}
+
+export default function AuthToken($window): AuthToken {
   var _key = 'auth-token';
   var _store = $window.localStorage;
-  var AuthToken = {};
 
-  AuthToken.setToken = setToken;
-  AuthToken.getToken = getToken;
+  return {setToken, getToken};
 
   function setToken(token) {
     if (token) {
@@ -23,7 +26,5 @@ export default function AuthToken($window) {
   function getToken() {
     return _store.getItem(_key);
   }
-
-  return AuthToken;
 }
 

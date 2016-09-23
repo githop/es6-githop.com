@@ -7,6 +7,10 @@ import _ from 'lodash';
 
 let article = function() {
   class Article extends Base {
+    public relationships;
+    public author:string;
+    public headers;
+    public imgs;
     constructor(data) {
       super(data);
       data.author = {};
@@ -16,11 +20,11 @@ let article = function() {
     }
 
     getHeaderIds() {
-      return this._pluckIds('headers', this.relationships);
+      return this._pluckIds('headers');
     }
 
     getImgIds() {
-      return this._pluckIds('imgs', this.relationships);
+      return this._pluckIds('imgs');
     }
 
     getAuthorId() {

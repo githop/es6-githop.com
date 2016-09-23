@@ -2,10 +2,16 @@
  *
  * Created by githop on 7/31/15.
  */
-UserFactory.$inject = ['$http', '$q', '$window', '$mdDialog', '$mdToast', 'AuthToken', 'API_URL']
-export default function UserFactory($http, $q, $window, $mdDialog, $mdToast, AuthToken, API_URL) {
-  var User = {};
 
+interface User {
+  login(email, password);
+  logout();
+  currentUser();
+}
+
+UserFactory.$inject = ['$http', '$q', '$window', '$mdDialog', '$mdToast', 'AuthToken', 'API_URL'];
+export default function UserFactory($http, $q, $window, $mdDialog, $mdToast, AuthToken, API_URL) : User {
+  var User: User = Object.create(null);
   var _user;
 
   //public methods binding
@@ -73,7 +79,7 @@ export default function UserFactory($http, $q, $window, $mdDialog, $mdToast, Aut
 
   function login(ev) {
     return $mdDialog.show({
-      controller: /*ngInject*/ _dialogController,
+      controller: ['$mdDialog', '$mdToast', _dialogController],
       controllerAs: 'dialog',
       templateUrl: 'dialog1.tmpl.html',
       parent: angular.element(document.body),

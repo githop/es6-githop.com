@@ -13,7 +13,14 @@
   var ngAnnotate = require('gulp-ng-annotate');
   var serve = require('browser-sync');
   var manifest = require('gulp-manifest');
-
+  var rollup = require('rollup').rollup;
+  const nodeResolve = require('rollup-plugin-node-resolve');
+  const typescript = require('rollup-plugin-typescript');
+  const compile = require('google-closure-compiler-js').compile;
+  const commonjs = require('rollup-plugin-commonjs');
+  const {resolve} = require('path');
+  const string = require('rollup-plugin-string');
+  const concat = require('gulp-concat');
   var root = 'client';
 
   var pathHelper = function(clipath) {
@@ -23,11 +30,21 @@
     };
   };
 
+  function closureCompilerPlugin() {
+    return {
+      transformBundle(bundle) {
+        var transformed = compile({jsCode: [{src: bundle}]});
+
+        return transformed.compiledCode;
+      }
+    };
+  }
+
   var appPath = pathHelper('githop'); //client/githop/{blob}
   var components = pathHelper('githop/components'); //githop/components/{blob}
 
   var paths = {
-    js: appPath('**/*.js'),
+    ts: appPath('**/*.js'),
     css: appPath('**/*.css'),
     html: [
       appPath('**/*.html'),
@@ -36,7 +53,7 @@
     dist: path.join(__dirname, 'dist/')
   };
 
-  gulp.task('serve', function(){
+  gulp.task('serve', function() {
     serve.init({
       port: process.env.PORT || 3001,
       open: false,
@@ -56,7 +73,20 @@
     });
   });
 
-  gulp.task('build', ['sass'], function() {
+  gulp.task('rollup-gcc', function() {
+    rollup({
+      entry: appPath('githop.module.ts'),
+      plugins: [
+        string({include: '**/*.html', exclude: ['**/index.html']}),
+        typescript({typescript: require('typescript')}),
+        nodeResolve({jsnext: true, main: true}),
+        commonjs({include: 'node_modules/**'}),
+        closureCompilerPlugin()
+      ]
+    }).then(bundle => bundle.write({dest: 'dist/bundle.js', format: 'iife', moduleName: 'githopRollsup'})).catch(console.log);
+  });
+
+  gulp.task('build', function() {
     var dist = path.join(paths.dist + 'githop.js');
     return jspm.bundleSFX(appPath('githop.module'), dist, {})
       .then(function() {
@@ -92,11 +122,11 @@
   });
 
   gulp.task('sass', function() {
-    return gulp.src(appPath('**/*.scss'), {base: './'})
+    return gulp.src(appPath('**/*.scss'))
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-
-        .pipe(gulp.dest('./'));
+        .pipe(concat('styles.css'))
+        .pipe(gulp.dest(root + '/assets/styles'));
   });
 
   gulp.task('sass:watch', function() {

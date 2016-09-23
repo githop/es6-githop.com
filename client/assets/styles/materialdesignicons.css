@@ -1,7 +1,7 @@
 /* MaterialDesignIcons.com */
 @font-face {
   font-family: 'MaterialDesignIcons';
-  src: url('/assets/fonts/materialdesignicons-webfont.ttf');
+  src: url('../fonts/materialdesignicons-webfont.ttf');
   font-weight: normal;
   font-style: normal;
 }

@@ -1,14 +1,16 @@
 /**
  * Created by githop on 8/1/15.
  */
-import Base from './base.model';
+import Base from './base.model.ts';
 import _ from 'lodash';
 
 header.$inject = ['Crud'];
 export default function header(Crud) {
   class Header extends Base {
+    public paragraphs;
+    public attributes;
     constructor(data) {
-      super();
+      super(data);
       if (data) {
         data.paragraphs = [];
         _.extend(this, data);
@@ -29,10 +31,9 @@ export default function header(Crud) {
     }
 
     edit() {
-      var self = this;
-      Crud.update(self).then(function(h) {
+      Crud.update(self).then((h) => {
         if (h !== undefined) {
-          self.attributes.text = h.text;
+          this.attributes.text = h.text;
         }
       });
     }

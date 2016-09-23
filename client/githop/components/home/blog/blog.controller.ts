@@ -5,8 +5,8 @@
 
 export default class BlogCtrl {
   static $inject = ['$state', '$document', 'Resources'];
-  private $state;
-  private posts;
+  public $state;
+  public posts;
   constructor($state, $document, Resources) {
     this.$state = $state;
     this.posts = Resources.getArticles();

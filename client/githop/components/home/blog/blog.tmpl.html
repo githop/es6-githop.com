@@ -6,8 +6,8 @@
       </md-card>
     </div>
     <div ng-if="Blog.posts.length !== 0" class="blog-roll animate-if">
-      <div ng-repeat="post in Blog.posts | orderBy:'-attributes.postedOn' " ng-click="Blog.goToPost(post.id)">
-        <md-card class="blog-card clickable">
+      <div ng-repeat="post in Blog.posts | orderBy:'-attributes.postedOn'">
+        <md-card class="blog-card clickable" ng-click="Blog.goToPost(post.id)">
           <!--<pre>{{post | json}}</pre>-->
           <div class="header-bg"><img ng-src="{{post.imgs[0].attributes.href}}"></div>
           <md-card-content>

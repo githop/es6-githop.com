@@ -5,7 +5,6 @@
 
 import 'angular';
 import 'angular-ui-router';
-import './blog.scss';
 import * as template from './blog.tmpl.html';
 import './posts/post.module';
 import './models/models.module';
@@ -19,15 +18,15 @@ let blogModule = angular.module('githop.blog', [
   'githop.models',
   'githop.post'
 ])
-  .config(($stateProvider) => {
+  .config(['$stateProvider', ($stateProvider) => {
     $stateProvider
       .state('home.blog', {
         url: '/blog',
-        template: template,
+        template,
         controller: 'BlogCtrl',
         controllerAs: 'Blog'
       });
-  })
+  }])
   .factory('Resources', Resources)
   .factory('Crud', Crud)
   .controller('BlogCtrl', BlogCtrl);

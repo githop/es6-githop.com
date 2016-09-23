@@ -4,6 +4,7 @@
 import _ from 'lodash';
 
 class Base {
+  public relationships;
   constructor(data) {
     _.extend(this, data);
   }
@@ -17,7 +18,7 @@ class Base {
   }
 
   _getParaIds() {
-    return this._pluckIds('paragraphs', this.relationships);
+    return this._pluckIds('paragraphs');
   }
 
 }

@@ -47,9 +47,8 @@
               <div class="pie-wrapper">
                 <tooltip ng-model="Res.selectedModel"></tooltip>
                 <img ng-src="../assets/images/profpic.jpg" class="md-avatar pie"/>
-                <!--<donut ng-model="Res.skillsChart" width="200" height="200" radius="50" property="'value'"-->
-                       <!--mousemove="Res.openToolTip(model)" mouseleave="Res.closeToolTip()"></donut>-->
-
+                <!--chart{{Res.skillsChart}}-->
+                <nvd3 options="Res.options" data="Res.skillsChart"></nvd3>
 
 
               </div>

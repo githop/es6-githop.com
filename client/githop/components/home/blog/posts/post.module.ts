@@ -24,20 +24,20 @@ let _templateProvider = function(i) {
 let postModule = angular.module('githop.post', [
   'ui.router'
 ])
-  .config(($stateProvider) => {
+  .config(['$stateProvider', ($stateProvider) => {
     $stateProvider
       .state('home.blog.post', {
         url: '/posts/{postId}',
         views: {
           'body@home': {
-            templateProvider: function($stateParams) {
+            templateProvider: ['$stateParams', function($stateParams) {
               return _templateProvider($stateParams.postId);
-            },
+            }],
             controller: 'PostCtrl as Post'
           }
         }
       });
-  })
+  }])
   .controller('PostCtrl', PostCtrl);
 
 export default postModule;

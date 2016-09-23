@@ -4,10 +4,10 @@
  */
 import 'angular';
 import 'angular-ui-router';
-import shell from './layout/shell.tmpl.html';
-import nav from './layout/nav.tmpl.html';
-import body from './layout/body.tmpl.html';
-import home from './home.tmpl.html';
+import * as shell from './layout/shell.tmpl.html';
+import * as nav from './layout/nav.tmpl.html';
+import * as body from './layout/body.tmpl.html';
+import * as home from './home.tmpl.html';
 import './blog/blog.module';
 import './resume/resume.module';
 import HomeCtrl from './home.controller';
@@ -19,7 +19,7 @@ let homeModule = angular.module('githop.home', [
   'githop.blog',
   'githop.resume'
 ])
-  .config(($stateProvider) => {
+  .config(['$stateProvider', ($stateProvider) => {
     $stateProvider
       .state('home', {
         abstract: true,
@@ -40,7 +40,7 @@ let homeModule = angular.module('githop.home', [
         url: '/',
         template: home
       });
-  })
+  }])
   .factory('Analysis', Analysis)
   .filter('sentiment', sentiment)
   .controller('HomeCtrl', HomeCtrl);

@@ -7,16 +7,16 @@ import _ from 'lodash';
 para.$inject = ['Crud'];
 export default function para(Crud) {
   class Para extends Base {
+    public attributes;
     constructor(data) {
       super(data);
       _.extend(this, data);
     }
 
     edit() {
-      var self = this;
-      Crud.update(self).then(function(p) {
+      Crud.update(this).then((p) => {
         if (p !== undefined) {
-          self.attributes.body = p.body;
+          this.attributes.body = p.body;
         }
       });
     }

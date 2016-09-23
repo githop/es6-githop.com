@@ -5,8 +5,6 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 
 module.exports = env => {
   return {
@@ -27,30 +25,22 @@ module.exports = env => {
       loaders: [
         {test: require.resolve('angular'), loader: 'exports?window.angular'},
         {test: /\.html$/, loader: 'html'},
-        {test: /.ts$/, loader: 'ts-loader', exclude: /node_modules/},
-        {test: /\.scss$/, loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: ['css', 'sass']
-        })},
-        {test: /\.css$/, loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader'
-        })}
+        {test: /.ts$/, loader: 'ts-loader', exclude: /node_modules/}
       ]
     },
     plugins: [
       // new webpack.ProvidePlugin({
-      //   angular: 'angular',
+      //   '$d3': 'd3'
       // }),
-      new ExtractTextPlugin({
-        filename: 'style.css',
-        allChunks: false
-      }),
       new HtmlWebpackPlugin({
         template: './index.html',
         inject: 'body',
         hash: false
-      })
-    ]
+      }),
+      env.prod ? new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: module => /node_modules/.test(module.resource)
+      }) : undefined
+    ].filter(p => !!p)
   };
 };

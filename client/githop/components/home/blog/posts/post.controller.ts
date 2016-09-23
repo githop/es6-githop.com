@@ -5,10 +5,10 @@
 
 export default class PostCtrl {
   static $inject = ['$stateParams', '$document', 'Resources'];
+  public post;
   constructor($stateParams, $document, Resources) {
-    var self = this;
-    Resources.getArticle($stateParams.postId).then(function(post) {
-      self.post = post;
+    Resources.getArticle($stateParams.postId).then((post) => {
+      this.post = post;
     });
 
     $document.scrollTop(0);
