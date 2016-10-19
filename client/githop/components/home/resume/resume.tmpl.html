@@ -80,11 +80,26 @@
 
           <section>
             <div layout="row" layout-align="space-between center">
+              <h4><a href="https://inthetelling.com">In the Telling</a></h4>
+              <div>Current</div>
+            </div>
+            <p>A digital media studio focusing on creating interacting narratives. Front-end engineer responsible for maintaining AngularJS application.</p>
+
+            <md-list>
+              <md-list-item class="md-1-line" ng-repeat="win in Res.itt">
+                <i class="mdi mdi-check mdi-24"></i></br>
+                <div class="md-list-item-text" flex>{{win.text}}</div>
+              </md-list-item>
+            </md-list>
+          </section>
+
+          <md-divider></md-divider>
+          <section>
+            <div layout="row" layout-align="space-between center">
               <h4>Briebug Solutions</h4>
               <div>September 2015 - Short Term Contract</div>
             </div>
             <p>Briebug Solutions specializes in providing business applications solutions with the MEAN stack. Briebug utilizes a test driven approach to software development in order to produce maintainable, reusable and modular codebases. Toolchain includes NodeJS, AngularJS, Gulp, Karma/Mocha, MongoDB as well as other tools if necessary to provide an appropriate solution.</p>
-
           </section>
 
           <md-divider></md-divider>

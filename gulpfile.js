@@ -6,6 +6,8 @@
   var jspm = require('jspm');
   var del  = require('del');
   var rename = require('gulp-rename');
+  var sass = require('gulp-sass');
+  var sourcemaps = require('gulp-sourcemaps');
   var uglify = require('gulp-uglify');
   var htmlReplace = require('gulp-html-replace');
   var ngAnnotate = require('gulp-ng-annotate');
@@ -54,7 +56,7 @@
     });
   });
 
-  gulp.task('build', function() {
+  gulp.task('build', ['sass'], function() {
     var dist = path.join(paths.dist + 'githop.js');
     return jspm.bundleSFX(appPath('githop.module'), dist, {})
       .then(function() {
@@ -87,6 +89,18 @@
         exclude: 'githop.manifest'
       }))
       .pipe(gulp.dest(paths.dist));
+  });
+
+  gulp.task('sass', function() {
+    return gulp.src(appPath('**/*.scss'), {base: './'})
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+
+        .pipe(gulp.dest('./'));
+  });
+
+  gulp.task('sass:watch', function() {
+    gulp.watch(appPath('**/*.scss'), ['sass']);
   });
 
 })();

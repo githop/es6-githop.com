@@ -27,30 +27,34 @@ class ResumeCtrl {
     ];
 
     Res.skills = {
-      langs: ['JAVASCRIPT', 'RUBY', 'PHP', 'ANGULARjs', 'NODE', 'GULP/GRUNT', 'HTML', 'CSS'],
+      langs: ['JAVASCRIPT', 'TYPESCRIPT', 'RUBY', 'PHP', 'ANGULARjs', 'NODE', 'GULP/GRUNT', 'HTML', 'CSS'],
       other: ['GIT', 'LINUX', 'SQL', 'TDD', 'PROTRACTOR', 'VIM', 'AUTOMATION'],
-      learning: ['DART', 'ASYNC / AWAIT', 'WEBSOCKETS']
+      learning: ['DART', 'FP', 'ANGULAR2']
     };
 
     var attributes = [
-      {name: 'Javascript', value: 2},
-      {name: 'Ruby', value: 1},
+      {name: 'JavaScript', value: 5, text: 'ES6, FP'},
+      {name: 'TypeScript', value: 4, text: 'for sanity'},
+      {name: 'Ruby', value: 2},
       {name: 'PHP', value: 0.5},
-      {name: 'ANGULRjs', value: 1, text: 'superheroic MVC framework!'},
-      {name: 'NODE', value: 1, text: 'JS with streams!'},
-      {name: 'GULP/GRUNT', value: 1, text: 'client side build automation'},
+      {name: 'ANGULRjs', value: 4, text: 'superheroic MVC framework!'},
+      {name: 'NODE', value: 3, text: 'JS with streams!'},
+      {name: 'GULP/GRUNT', value: 2, text: 'client side build automation'},
       {name: 'HTML', value: 3, text: 'HTML5 rocks!'},
       {name: 'CSS', value: 3, text: 'can fizzBuzz in css'},
-      {name: 'GIT', value: 2, text: 'Thanks Linus!'},
+      {name: 'GIT', value: 3, text: 'Thanks Linus!'},
       {name: 'LINUX', value: 4, text: 'Ubuntu user since college'},
       {name: 'SQL', value: 3, text: 'Bobby Tables will teach you to sanitize your db inputs!'},
-      {name: 'TDD', value: 1, text: 'Rspec, Karma/Jasmine'},
-      {name: 'PROTRACTOR', value: 1, text: 'Integration testing'},
-      {name: 'VIM', value: 2, text: 'no mouse!'},
-      {name: 'AUTOMATION', value: 2, text: 'TravisCI, Teamcity,'},
-      {name: 'DART', value: 0.5, text: 'Learning'},
-      {name: 'AWS', value: 0.5, text: 'Elastic Beanstalk, S3'},
-      {name: 'WEBSOCKETS', value: 0.5, text: 'Learning'}
+      {name: 'TDD', value: 2, text: 'Rspec, Karma/Jasmine'},
+      {name: 'PROTRACTOR', value: 2, text: 'Integration testing'},
+      {name: 'VIM', value: 3, text: 'no mouse!'},
+      {name: 'AUTOMATION', value: 4, text: 'TravisCI, Teamcity,'},
+    ];
+
+    Res.itt = [
+      {text: 'Maintain and develop new features for primary product.'},
+      {text: 'Develop internal tools for testing and release control.'},
+      {text: 'Mock up and design new features.'}
     ];
 
     Res.wins = [
@@ -67,7 +71,6 @@ class ResumeCtrl {
     Res.selectedModel = {};
 
     Res.openToolTip = function (model) {
-      console.log('find that pop up');
       Res.selectedModel = model;
     };
 

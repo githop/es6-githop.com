@@ -26,26 +26,28 @@
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-html-replace": "^1.5.1",
+    "gulp-jspm": "^0.5.13",
     "gulp-manifest": "0.0.7",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.2.0",
-    "jspm": "^0.15.7"
+    "jspm": "^0.16.45"
   },
   "jspm": {
-    "directories": {},
     "configFile": "jspm.config.js",
     "dependencies": {
-      "angular": "github:angular/bower-angular@^1.4.3",
-      "angular-animate": "github:angular/bower-angular-animate@^1.4.3",
-      "angular-material": "github:angular/bower-material@^0.10.0",
-      "angular-sanitize": "github:angular/bower-angular-sanitize@^1.4.3",
+      "angular": "github:angular/bower-angular@^1.5.8",
+      "angular-animate": "github:angular/bower-angular-animate@^1.5.8",
+      "angular-material": "github:angular/bower-material@^1.1.0",
+      "angular-sanitize": "github:angular/bower-angular-sanitize@^1.5.8",
       "angular-scroll": "github:oblador/angular-scroll@^0.7.1",
-      "angular-touch": "github:angular/bower-angular-touch@^1.4.3",
+      "angular-touch": "github:angular/bower-angular-touch@^1.5.8",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "clean-css": "npm:clean-css@^3.3.7",
       "css": "github:systemjs/plugin-css@^0.1.13",
-      "d3": "github:mbostock/d3@^3.5.6",
+      "d3": "github:d3/d3@^3.5.6",
       "jquery": "github:components/jquery@^2.1.4",
       "lodash": "npm:lodash@^3.10.0",
       "material-design-icons": "npm:material-design-icons@^2.0.0",
@@ -54,9 +56,9 @@
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.1.13",
-      "babel-runtime": "npm:babel-runtime@^5.1.13",
-      "core-js": "npm:core-js@^0.9.4"
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
     }
   }
 }
