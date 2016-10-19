@@ -1,6 +1,6 @@
-<div id="resume" layout="row" layout-sm="column">
+<div id="resume" layout="column" layout-gt-xs="row">
 
-  <div flex>
+  <div class="toc">
     <md-card class="scrollspy">
       <md-toolbar>
         <div class="md-toolbar-tools md-toolbar-tools-bottom">
@@ -37,11 +37,11 @@
           <div layout="row" layout-align="space-between">
             <div layout="row" layout-sm="column" layout-align="center center" ng-repeat="c in Res.contactInfo" class="contact-info">
               <a ng-href="{{c.link}}" alt={{c.text}} target="_blank"><i class="{{c.icon}} mdi-24"></i></a>
-              <md-button hide-sm ng-href="{{c.link}}" alt={{c.text}} target="_blank">{{c.text}}</md-button>
+              <md-button hide-xs ng-href="{{c.link}}" alt={{c.text}} target="_blank">{{c.text}}</md-button>
             </div>
           </div>
 
-          <div layout="row" layout-sm="column">
+          <div layout="row" layout-sm="column" layout-xs="column">
             <div flex>
 
               <div class="pie-wrapper">
@@ -83,8 +83,12 @@
               <h4><a href="https://inthetelling.com">In the Telling</a></h4>
               <div>Current</div>
             </div>
-            <p>A digital media studio focusing on creating interacting narratives. Front-end engineer responsible for maintaining AngularJS application.</p>
-
+            <p>
+              In the Telling provides high quality course content to universities and businesses. Main product (the Narrasys Producer) enables universities to create interactive media experiences centered around video, all online (similar to a traditional non-linear editor). Application is written in AngularJS client with a Rails API server and MongoDB.
+            </p>
+            <p>
+              A typical day consists  of working with an agile team to build new features and maintain/ refactoring existing features.
+            </p>
             <md-list>
               <md-list-item class="md-1-line" ng-repeat="win in Res.itt">
                 <i class="mdi mdi-check mdi-24"></i></br>
@@ -96,7 +100,7 @@
           <md-divider></md-divider>
           <section>
             <div layout="row" layout-align="space-between center">
-              <h4>Briebug Solutions</h4>
+              <h4><a href="http://briebugsoftwaresolutions.com/">Briebug Solutions</a></h4>
               <div>September 2015 - Short Term Contract</div>
             </div>
             <p>Briebug Solutions specializes in providing business applications solutions with the MEAN stack. Briebug utilizes a test driven approach to software development in order to produce maintainable, reusable and modular codebases. Toolchain includes NodeJS, AngularJS, Gulp, Karma/Mocha, MongoDB as well as other tools if necessary to provide an appropriate solution.</p>
@@ -105,7 +109,7 @@
           <md-divider></md-divider>
           <section>
             <div layout="row" layout-align="space-between center">
-              <h4>Trainheroic</h4>
+              <h4><a href="http://trainheroic.com/">Trainheroic</a></h4>
               <div>December 2014 - June 2015</div>
             </div>
             <p>TrainHeroic is a startup specializing in fitness and coach/gym driven workout programs located in Boulder, CO. Product portfolio consists of three web apps, (coach/athlete portal and marketplace) and an iPhone app. Server stack consists of of a monolith PHP app being replaced by a Laravel API. Coach portal and marketplace client apps are AngularJS, athlete portal is currently being rewritten in Angular.</p>
@@ -138,59 +142,21 @@
           <div class="md-toolbar-tools md-toolbar-tools-bottom">
             <i class="mdi mdi-xml mdi-36"></i>
 
-            <h3>Projects</h3>
+            <h3>Side Projects</h3>
           </div>
         </md-toolbar>
         <md-card-content>
           <section>
-            <div layout="row" layout-align="space-between center">
-              <h4><a ng-href="http://scrumpoker.githop.com">Realtime ScrumPoker</a></h4>
-              <div>October 2015</div>
+            <div ng-repeat="project in Res.projects">
+              <div layout="row" layout-align="space-between center">
+                <h4><a ng-href="{{project.href}}">{{project.title}}</a></h4>
+                <div>{{project.date}}</div>
+              </div>
+
+              <p ng-bind-html="project.description"></p>
+
+              <md-divider></md-divider>
             </div>
-            <p>An online multiplayer real-time version of <a href="https://en.wikipedia.org/wiki/Planning_poker">Scrum poker</a>! Players use their mobile device to make estimates and reveal their cards to other players. Topics and each players card See it online at <a hrepf="http://scrumpoker.githop.com">scrumpoker.githop.com</a>!
-            Uses websockets to allow players to 'flip' their cards over for other players to see in real time. <a href="https://github.com/githop/realtime-scrumpoker" target="_blank">Source Code</a></p>
-            <md-divider></md-divider>
-
-            <div layout="row" layout-align="space-between center">
-              <h4><a ng-href="http://devbootcamp.com">githop.com</a></h4>
-              <div>June 2015</div>
-            </div>
-
-            <p>My personal website / blog CMS. AngularJS on the client and Rails for the API server.  Angular client uses ES6,  Application Cache for offline access, and JWT token authentication. The Rails server is JSON only, blog posts are modeled as SQL tables and blog post text is analyzed with my sentiment analysis algorithm (see post 7).
-
-              App is hosted via DigitalOcean where I setup and maintain an Ubuntu Linux instance with NGINX server to proxy Rails with Postgres DB. Blog posts are created via POST request from custom Google Doc plugin and edited via Angular client. </p>
-            <md-divider></md-divider>
-            <div layout="row" layout-align="space-between center">
-              <h4><a ng-href="http://devbootcamp.com">Dev Bootcamp</a></h4>
-              <div>April - July 2014</div>
-            </div>
-
-            <p>Dev Bootcamp is an intensive 9 week program designed to instill a foundation for a career in web
-              development.
-              DBC emphasises non-technical skills such as team integration and engineering empathy.</p>
-
-
-            <h4><a ng-href="https://floating-springs-6532.herokuapp.com/#/">PaddedPockets</a></h4>
-
-            <p>Begun as personal project after 6 weeks of Dev Bootcamp. Originally a <a
-                ng-href="https://hidden-shore-1353.herokuapp.com/">Sinatra app</a>, it has since gone through
-              several iterations; <a ng-href="">a Rails app</a>, then 2 AngularJS / Rails hybrid apps. <a
-                  ng-href="https://pocketspadded.herokuapp.com/#/">Angular v1</a>, <a
-                  ng-href="https://floating-springs-6532.herokuapp.com/#/">v2</a></p>
-
-            <p>In all versions the app pulls data from a 3rd party API, caches it, then returns the data to the user.
-              The
-              Angular/Rails versions use Rails to gather and serialize the data as JSON, which is consumed by the
-              Angular
-              client. All politician images are hosted on Google drive and fetched via API call from the Angular
-              client.</p>
-
-            <h4><a ng-href="https://github.com/dyoachim/soundscript">SoundScript</a></h4>
-
-            <p>Final group project at DBC. SoundScript is a tool for learning new languages via YouTube. Users can watch
-              crowd sourced translations or upload translations of their own. Tools used were primarily JavaScript, the
-              YouTube API, and a Rails server tying everything together.</p>
-
           </section>
         </md-card-content>
       </md-card>
@@ -205,22 +171,17 @@
           </div>
         </md-toolbar>
         <md-card-content>
-          <div layout="row" layout-align="space-between center">
-            <h4>Boulder Ruby Group - Ruby Newby Beginner’s Track</h4>
-            <div>September 2014</div>
+
+          <div ng-repeat="talk in Res.talks">
+            <div layout="row" layout-align="space-between center">
+              <h4><a ng-href="{{talk.href}}">{{talk.title}}</a></h4>
+              <div>{{talk.date}}</div>
+            </div>
+
+            <p ng-bind-html="talk.description"></p>
+
+            <md-divider></md-divider>
           </div>
-          <p>Authored presentation at meetup group on basic ruby data structures; i.e. strings and numbers. The series
-            is tailored towards beginners. <a ng-href="http://rubybeginnerstrack.github.io/2014/10/15/basic-data-types.html">Blog Post</a> - <a ng-href="http://githop.github.io/slides_ruby_newby/">Slides</a></p>
-
-
-          <md-divider></md-divider>
-
-          <div layout="row" layout-align="space-between center">
-            <h4><a ng-href="http://www.meetup.com/RockyMountainAngularJS/photos/25863001/433553204/" target="_blank">Boulder AngularJS Meetup</a></h4>
-            <div>January 2015</div>
-          </div>
-          <p>Delivered talk on experiences using AngularJS with a Rails API. Presentation focused on PaddedPockets Rails and Angular architecture,  3rd party services,  development and design decisions along the way, followed by a Q&A session regarding the app. </p>
-
         </md-card-content>
       </md-card>
 
@@ -275,11 +236,21 @@
           </div>
         </md-toolbar>
         <md-card-content>
+
+          <div layout="row" layout-align="space-between center">
+            <h4>Dev Bootcamp</h4>
+            <div>April - July 2014</div>
+          </div>
+          <p>Dev Bootcamp is an intense 12 week program designed to instill a  foundation for a career in web development. In addition, DBC emphasises non-technical interpersonal skills such as team integration and engineering empathy.</p>
+          <md-divider></md-divider>
+
           <div layout="row" layout-align="space-between center">
             <h4>Ohio University</h4>
             <div>2012</div>
           </div>
-          Bachelor of Arts Philosophy
+          <p>Bachelor of Arts Philosophy</p>
+          <md-divider></md-divider>
+
         </md-card-content>
       </md-card>
 

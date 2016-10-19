@@ -36,7 +36,7 @@
     dist: path.join(__dirname, 'dist/')
   };
 
-  gulp.task('serve', function(){
+  gulp.task('serve', ['sass:watch'],function(){
     serve.init({
       port: process.env.PORT || 3001,
       open: false,
