@@ -2,3 +2,8 @@ dist
 jspm_packages
 node_modules
 .idea
+.DSii.DS_Store
+typings/
+yarn.lock
+.DS_Store
+
